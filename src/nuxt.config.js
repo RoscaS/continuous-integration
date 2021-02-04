@@ -3,11 +3,11 @@ const package = require('./package');
 
 module.exports = {
   env: {
-    app_env: process.env.APP_ENV,
-    FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
-    FIREBASE_DATABASE_NAME: process.env.FIREBASE_DATABASE_NAME,
-    FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID,
-    FIREBASE_SENDER_ID: process.env.FIREBASE_SENDER_ID
+    // app_env: process.env.APP_ENV,
+    // FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
+    // FIREBASE_DATABASE_NAME: process.env.FIREBASE_DATABASE_NAME,
+    // FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID,
+    // FIREBASE_SENDER_ID: process.env.FIREBASE_SENDER_ID
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -16,16 +16,16 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: '' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
-      }
-    ]
+          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons',
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -41,7 +41,7 @@ module.exports = {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -49,7 +49,7 @@ module.exports = {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -58,15 +58,15 @@ module.exports = {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en'
-    }
+      lang: 'en',
+    },
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: false
+      dark: false,
       // themes: {
       //   dark: {
       //     primary: colors.blue.darken2,
@@ -78,7 +78,7 @@ module.exports = {
       //     success: colors.green.accent3,
       //   },
       // },
-    }
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -94,16 +94,16 @@ module.exports = {
             {
               // targets
               buildTarget: isServer ? 'server' : 'client',
-              corejs: { version: 3 }
-            }
-          ]
+              corejs: { version: 3 },
+            },
+          ],
         ];
       },
       env: {
         production: {
-          plugins: []
-        }
-      }
-    }
-  }
+          plugins: [],
+        },
+      },
+    },
+  },
 };
