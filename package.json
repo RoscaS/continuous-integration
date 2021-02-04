@@ -1,0 +1,20 @@
+{
+  "name": "generic-website-landing",
+  "main": "index.js",
+  "scripts": {
+    "setup:client": "cd \"src\" && npm i",
+    "setup:firebase": "cp .setup-firebaserc .firebaserc",
+    "setup": "npm i && npm run setup:firebase && npm run setup:client",
+    "dev": "cd ./src && yes n | npm run dev",
+    "build": "cd ./src && npm run build",
+    "copyassets": "cp -R ./src/.nuxt/dist/client/* ./public/assets",
+    "copystatic": "cp -R ./src/static/* ./public",
+    "pre:deploy": "npm run copyassets && npm run copystatic",
+    "firebase:serve": "npm run build && npm run serve",
+    "serve": "cross-env DEBUG=nuxt:*  firebase serve --only hosting,functions",
+    "deploy": "firebase deploy && rm -rf .firebaserc"
+  },
+  "dependencies": {
+    "cross-env": "^6.0.3"
+  }
+}

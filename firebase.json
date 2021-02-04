@@ -1,0 +1,20 @@
+{
+  "hosting": {
+    "public": "public",
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "nuxtapp"
+      }
+    ]
+  },
+  "functions": {
+    "source": "src",
+    "predeploy": "npm run build && npm run pre:deploy",
+    "ignore":[
+      "static",
+      "node_modules",
+      "**/**/dist/client"
+    ]
+  }
+}
