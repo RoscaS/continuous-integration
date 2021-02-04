@@ -1,8 +1,0 @@
-{
-  "projects": {
-    "default": "generic-website-dev",
-    "develop": "generic-website-dev",
-    "staging": "generic-website-dev",
-    "production": "generic-website-c882c"
-  }
-}
