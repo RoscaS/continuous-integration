@@ -12,16 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm run setup
-      - run: firebase use develop --token ${{ secrets.GITHUB_TOKEN }}
-      - run: firebase deploy -m "Deploying to test environment" --token ${{ secrets.GITHUB_TOKEN }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          APP_ENV: '${{ secrets.APP_ENV_DEV }}'
-          FIREBASE_API_KEY: '${{ secrets.FIREBASE_API_KEY_DEV }}'
-          FIREBASE_DATABASE_NAME: '${{ secrets.FIREBASE_DATABASE_NAME_DEV }}'
-          FIREBASE_PROJECT_ID: '${{ secrets.FIREBASE_PROJECT_ID_DEV }}'
-          FIREBASE_SENDER_ID: '${{ secrets.FIREBASE_SENDER_ID_DEV }}'
-
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GENERIC_WEBSITE_DEV }}'
           channelId: live
